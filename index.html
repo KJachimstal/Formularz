@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="./script.js"></script>
+    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <body>
-    
+    <video autoplay muted loop class="video">
+        <source src="./media/movie.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <form class="form" id="form">
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="subject">Przedmiot:</label>
+                </div>
+                <div class="form-column">
+                    <select name="subject" id="subject" required>
+                        <option value="">Wybierz przedmiot</option>
+                        <option value="1">Technologie multimedialne</option>
+                        <option value="2">Podstawy kryptografii</option>
+                        <option value="3">Podstawy grafiki</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="name"><i class="fa fa-user"></i> Imię:</label>
+                </div>
+                <div class="form-column">
+                    <input type="text" name="name" id="name" pattern="[A-Za-z]{3,32}">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column">
+                    <label for="email"><i class="fa fa-envelope"></i> Email:</label>
+                </div>
+                <div class="form-column">
+                    <input type="email" name="email" id="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-column"></div>
+                <div class="form-column">
+                    <input type="checkbox" name="rule" id="rule" required>
+                    <label for="rule">Akceptuję regulamin.</label>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="reset" class="reset">Wyczyść</button>
+                <button type="submit" id="send" class="submit" onclick="login()">Zapisz się</button>
+            </div>        
+        </form>
+    </div>
+    <div class="loading_message hidden" id="loading">
+        Przetwarznie formularza...
+    </div>
 </body>
 </html>
