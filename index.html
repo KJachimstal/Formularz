@@ -8,8 +8,6 @@
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script src="./script.js"></script>
-    <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </head>
 <body>
     <video autoplay muted loop class="video">
@@ -55,12 +53,22 @@
             </div>
             <div class="form-buttons">
                 <button type="reset" class="reset">Wyczyść</button>
-                <button type="submit" id="send" class="submit" onclick="login()">Zapisz się</button>
-            </div>        
+                <button type="submit" id="send" class="submit">Zapisz się</button>
+            </div>
         </form>
     </div>
-    <div class="loading_message hidden" id="loading">
-        Przetwarznie formularza...
+    <div class="loading hidden" id="loading">
+        <div id="message_loading" class="loading_message hidden big">
+            <i class="fas fa-spinner fa-pulse"></i>
+        </div>
+        <div id="message_success" class="loading_message hidden">
+            Zapisano pomyślnie.
+        </div>
+        <div id="message_fail" class="loading_message hidden">
+            Błędny login lub hasło!
+        </div>
+        
     </div>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
